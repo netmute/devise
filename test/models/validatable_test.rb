@@ -39,7 +39,7 @@ class ValidatableTest < ActiveSupport::TestCase
   end
 
   test 'should accept valid emails' do
-    %w(a.b.c@example.com test_mail@gmail.com any@any.net email@test.br 123@mail.test).each do |email|
+    %w(a.b.c@example.com test_mail@gmail.com any@any.net email@test.br 123@mail.test user@foo,com).each do |email|
       user = new_user(:email => email)
       assert user.valid?, 'should be valid with email ' << email
       assert_blank user.errors[:email]
